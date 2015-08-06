@@ -106,6 +106,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+STATIC_ROOT = '/home/django/django_project/django_project/static'
 STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
@@ -117,4 +118,3 @@ try:
     from local_settings import *
 except:
     pass
-
