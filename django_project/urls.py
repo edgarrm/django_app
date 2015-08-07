@@ -14,20 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import url, include
-from rest_framework import routers
-from baseball import views
-from soccer import views
+from soccer import urls as soccer_urls
+from football import urls as football_urls
 from django.contrib import admin
 
-router = routers.DefaultRouter()
+"""router = routers.DefaultRouter()
 router.register(r'players', views.PlayerViewSet)
 router.register(r'teams', views.TeamViewSet)
-router.register(r'coaches', views.CoachViewSet)
+router.register(r'coaches', views.CoachViewSet)"""
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include(router.urls)),
+    url(r'^soccer-api', include(soccer_urls)),
+    url(r'^football-api', include(football_urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
