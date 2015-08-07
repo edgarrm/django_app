@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from models import Player, Team, Coach
-from soccer.serializers import PlayerSerializer, TeamSerializer, CoachSerializer
+from football.serializers import PlayerSerializer, TeamSerializer, CoachSerializer
 
 
 class PlayerViewSet(viewsets.ModelViewSet):
